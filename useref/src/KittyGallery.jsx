@@ -5,7 +5,7 @@ import { useRef } from "react";
 function KittyGallery() {
   const galleryRef = useRef(null);
   const index = useRef(0);
-  function showNextimg() {
+  function showNextImg() {
     let imageList = galleryRef.current.querySelectorAll(".image");
     index.current = index.current + 1 >= imageList.length ? 0 : index.current + 1;
       imageList[index.current].scrollIntoView({
@@ -20,16 +20,16 @@ function KittyGallery() {
   return (
     <div>
       <h1>KittyGallery</h1>
-      <button onClick={showNextimg}>Next</button>
+      <button onClick={showNextImg}>Next</button>
       <ul ref={galleryRef} className="gallery">
         <li className="image" >
-          <img src="http://placekitten.com/g/200/300" alt="" />
+          <img src="http://placekitten.com/g/200/300" alt="kittenImg" />
         </li>
         <li className="image">
-          <img src="http://placekitten.com/g/200/250" alt="" />
+          <img src="http://placekitten.com/g/200/250" alt="kittenImg" />
         </li>
         <li className="image" >
-          <img src="http://placekitten.com/g/300/300" alt="" />
+          <img src="http://placekitten.com/g/300/300" alt="kittenImg" />
         </li>
       </ul>
     </div>
