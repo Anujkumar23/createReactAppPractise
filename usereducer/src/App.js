@@ -1,13 +1,14 @@
 import "./App.css";
-import CounterReducer from "./CounterReducer";
-import TodoApp from "./TodoApp";
+import AppTodo from "./AppTodo";
+
+
+
 
 
 function App() {
   return (
     <div className="App">
-      {/* <CounterReducer /> */}
-      <TodoApp/>
+    <AppTodo/>
     </div>
   );
 }
