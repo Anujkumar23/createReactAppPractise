@@ -1,14 +1,35 @@
-import React from 'react'
-import { useState } from 'react'
+import React from "react";
+import { useContext } from "react";
+import { useState } from "react";
+import { TodosDispatchContext } from "./AppTodo";
+ 
+let nextId=4;
+export default function AddTodo() {
+  const dispatch = useContext(TodosDispatchContext)
 
-export default function AddTodo({onAddTodo}) {
-    const [text, setText] = useState("")
-    
+  const [text, setText] = useState("");
+
   return (
     <div>
-    <input type="text" name="newTodo" id="newTodo"  value={text} onChange={(e)=>setText(e.target.value)}/>
-   <button onClick={()=>{onAddTodo(text)
-setText("")}}>Add</button>
+      <input
+        type="text"
+        name="newTodo"
+        id="newTodo"
+        value={text}
+        onChange={(e) => setText(e.target.value)}
+      />
+      <button
+        onClick={() => {
+         dispatch({
+          type:"add",
+          id:nextId++,
+          text,
+         })
+          setText("");
+        }}
+      >
+        Add
+      </button>
     </div>
-  )
+  );
 }
