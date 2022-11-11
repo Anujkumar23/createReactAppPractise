@@ -1,12 +1,8 @@
 import React from "react";
 import { useReducer } from "react";
-<<<<<<< HEAD
-import todoReducer from "./TodoReducer";
-=======
-
->>>>>>> 4e86cf67102108b360d5129a60f83c8e90ac7b74
 import AddTodo from "./AddTodo";
 import TodoList from "./TodoList";
+import todoReducer from "./TodoReducer";
 
 let nextId = 4;
 const initialTodos = [
@@ -14,33 +10,6 @@ const initialTodos = [
   { id: 2, text: "Learn React", done: false },
   { id: 3, text: "Learn Node", done: false },
 ];
-
-<<<<<<< HEAD
-
-=======
-function todoReducer(todos, action) {
-  const { type } = action;
-  switch (type) {
-    case "add":
-      const { id, text } = action;
-      return [...todos, { id, text, done: false }];
-
-    case "change":
-      const updatedTodo = action.todo;
-      return todos.map((existingTodo) => {
-        if (existingTodo.id === updatedTodo.id) {
-          return updatedTodo;
-        } else {
-          return existingTodo;
-        }
-      });
-    case "remove":
-      const todoId = action.id;
-      return todos.filter((todo) => todo.id !== todoId);
-  }
-}
->>>>>>> 4e86cf67102108b360d5129a60f83c8e90ac7b74
-
 function AppTodo() {
   const [todos, dispatch] = useReducer(todoReducer, initialTodos);
 
@@ -78,9 +47,6 @@ function AppTodo() {
     );
   }
 
+export default AppTodo;
 
-<<<<<<< HEAD
-export default AppTodo;
-=======
-export default AppTodo;
->>>>>>> 4e86cf67102108b360d5129a60f83c8e90ac7b74
+
