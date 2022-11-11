@@ -1,4 +1,4 @@
-export default function todoReducer(todos, action) {
+ function TodoReducer(todos, action) {
     const { type } = action;
     switch (type) {
       case "add":
@@ -19,3 +19,4 @@ export default function todoReducer(todos, action) {
         return todos.filter((todo) => todo.id !== todoId);
     }
   }
+  export default TodoReducer
