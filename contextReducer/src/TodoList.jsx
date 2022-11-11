@@ -1,23 +1,26 @@
 import React from "react";
-import { useContext } from "react";
-import { TodosContext, TodosDispatchContext } from "./AppTodo";
+import { useDispatch, useTodos } from "./TodosContext";
+
 
 function TodoList() {
-  const todos=useContext(TodosContext)
+  const todos=useTodos();
 
   return (
-    <ul>
+    <div className="container">
+      <ul className="todolist">
       {todos.map((todo) => (
         <li key={todo.id}>
           <Todo todo={todo}  />
         </li>
       ))}
     </ul>
+    </div>
+    
   );
 }
 
 function Todo({todo}) {
-  const dispatch=useContext(TodosDispatchContext)
+  const dispatch=useDispatch()
   return (
     <>
       <input
